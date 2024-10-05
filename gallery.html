@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unseen Universe</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/global.css" rel="stylesheet">
+	<link href="css/login.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link href="https://fonts.googleapis.com/css?family=Amaranth&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
+	<script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+	<style>
+/* General styles */
+p {
+  width: 80%; /* Changed to percentage for responsiveness */
+  margin: 50px auto;
+  position: relative;
+}
+
+img {
+  height: 100px;
+  position: absolute;
+  left: 0;
+  offset-path: path('m 0 50 q 50-30 100-30 t 100 30 100 0 100-30 100 30');
+  box-shadow: 2px 2px 5px #0008;
+  transition: transform .4s ease-out, offset-path .4s cubic-bezier(.77,-1.17,.75,.84),box-shadow .3s, z-index .3s;
+  z-index: 0;
+}
+
+img:hover {
+  transform: scale(2);
+  offset-path: path('M 0 60 C 50 40, 100 40, 150 60 S 250 70, 300 60');
+  box-shadow: 3px 4px 10px #0006;
+  z-index: 999;
+}
+
+/* 3 images */
+img:nth-last-child(3):first-child {
+  offset-distance: 17%;
+}
+img:nth-last-child(2):nth-child(2) {
+  offset-distance: 50%;
+}
+img:last-child:nth-child(3) {
+  offset-distance: 83%;
+}
+
+/* 4 images */
+img:nth-last-child(4):first-child {
+  offset-distance: 10%;
+}
+img:nth-last-child(3):nth-child(2) {
+  offset-distance: 35%;
+}
+img:nth-last-child(2):nth-child(3) {
+  offset-distance: 65%;
+}
+img:last-child:nth-child(4) {
+  offset-distance: 90%;
+}
+
+/* 5 images */
+img:nth-last-child(5):first-child {
+  offset-distance: 0%;
+}
+img:nth-last-child(4):nth-child(2) {
+  offset-distance: 25%;
+}
+img:nth-last-child(3):nth-child(3) {
+  offset-distance: 50%;
+}
+img:nth-last-child(2):nth-child(4) {
+  offset-distance: 75%;
+}
+img:last-child:nth-child(5) {
+  offset-distance: 100%;
+}
+
+/* Responsive adjustments */
+
+/* Small screens (e.g., mobile devices) */
+@media (max-width: 600px) {
+  p {
+    width: 90%;
+    height: 150px;
+  }
+
+  img {
+    height: 50px; /* Smaller image size for mobile */
+    offset-path: path('M 0 30 C 50 10, 100 10, 150 30 S 250 50, 300 30');
+  }
+
+  img:hover {
+    transform: scale(1.5); /* Smaller scale on hover */
+  }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  p {
+    width: 85%;
+    height: 180px;
+  }
+
+  img {
+    height: 75px; /* Slightly larger images for tablets */
+    offset-path: path('M 0 40 C 50 20, 100 20, 150 40 S 250 60, 300 40');
+  }
+
+  img:hover {
+    transform: scale(2);
+  }
+}
+
+/* Larger screens (e.g., desktops) */
+@media (min-width: 1025px) {
+  p {
+    width: 100%;
+	margin-left: 30%;
+    height: 200px;
+  }
+
+  img {
+	width: 20%;
+    height: 100px;
+  }
+
+  img:hover {
+    transform: scale(3);
+  }
+}
+
+	</style>
+
+  </head>
+<body>
+
+<section id="header" class="clearfix">
+ <div class="container_1">
+  <div class="row_1">
+   <div class="header_1 text-center clearfix">
+    <div class="col-sm-12">
+	 <h1 class="mgt"><a href="index.html"><span class="col_1">Unseen</span> Universe</a></h1>
+	</div>
+   </div>
+   <div class="header_2 clearfix cd-secondary-nav">
+    <div class="col-sm-12">
+     <nav class="navbar nav_t">
+            <div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><span class="col_1">Unseen</span> Universe</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  	 <ul class="nav navbar-nav">
+				<li><a class="m_tag" href="index.html">Home</a></li>
+				<li><a class="m_tag" href="about.html">About Us</a></li>
+				<li class="dropdown">
+					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Product<span class="caret"></span></a>
+					  <ul class="dropdown-menu drop_1" role="menu">
+					    <li><a href="list.html">Product</a></li>
+						<li><a class="border_none" href="detail.html">Product Detail</a></li>
+					  </ul>
+                   </li>
+				<li class="dropdown">
+					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
+					  <ul class="dropdown-menu drop_1" role="menu">
+					    <li><a href="blog.html">Blog</a></li>
+						<li><a class="border_none" href="blog_detail.html">Blog Detail</a></li>
+					  </ul>
+                   </li>
+				<li><a class="m_tag active_tab" href="gallery.html">Gallery</a></li>
+				<li><a class="m_tag" href="contact.html">Contact Us</a></li>
+			</ul>
+                 
+				 
+			</div>		
+	</nav>
+	</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="center" class="center_list clearfix"> 
+  <div class="container">
+   <div class="row">
+    <div class="center_list_1 text-center clearfix">
+	 <div class="col-sm-12">
+	   <h2 class="mgt"><a href="#"> Gallery </h2>
+	 </div>
+	</div>
+   </div>
+  </div>
+</section>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+
+<p>
+	<img src="img/img50.jpg">
+	<img src="img/img51.jpg">
+	<img src="img/img52.jpg">
+	<img src="img/img53.jpg">
+	<img src="img/img54.jpg">
+  </p>
+</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+  
+  <p>
+	<img src="img/img1.jpg">
+	<img src="img/img2.jpg">
+	<img src="img/img3.jpg">
+  </p>
+</div>
+</div>
+<div class="row">
+	<div class="col-lg-12">
+  <p>
+	<img src="img/img55.jpg">
+	<img src="img/img56.jpg">
+	<img src="img/img57.jpg">
+	<img src="img/img58.jpg">
+  </p>
+</div>
+</div>
+</div>
+
+<section id="subscribe">
+	<div class="container">
+	 <div class="row">
+	  <div class="subscribe_1 clearfix">
+	   <div class="col-sm-6">  
+	   <div class="subscribe_1l clearfix">
+		<h4><i class="fa fa-edit col_1"></i> Join the community to be updated firstly?</h4>
+	   </div>
+	   </div>
+	   <div class="col-sm-6">  
+	   <div class="subscribe_1r clearfix">
+			   <form class="input-group" action="" style="display: flex;">
+			 <input type="email" placeholder="Enter Your Email" class="form-control form_2" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+			 <input type="submit" value="Subscribe" class="btn btn-danger" pattern="[a-z]{1,30}(,[a-z]{1,30})*">
+		   </form>			
+	   </div>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+   </section>
+   
+   <section id="footer">
+	<div class="container">
+	 <div class="row">
+	  <div class="footer_1 clearfix">
+	   <div class="col-sm-3">
+		<div class="footer_1i clearfix">
+		 <h1 class="mgt"><a href="index.html"><span class="col_1">Unseen</span> Universe</a></h1>
+		 <p>Explore Unseen Universe, where every artwork reveals a story untold. Discover art that transcends the visible world.</p>
+		 <ul class="social-network social-circle">
+			   <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+			   <li><a href="https://www.facebook.com/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+			   <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+			   <li><a href="https://accounts.google.com/" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+			   <li><a href="https://pk.linkedin.com/" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+		   </ul>
+		</div>
+	   </div>
+	   <div class="col-sm-3">
+		<div class="footer_1i clearfix">
+		<h4>Our Company</h4>
+		<h6><a href="#">Legal Notice</a></h6>
+		<h6><a href="#">Terms And Conditions</a></h6>
+		<h6><a href="about.html">About Us</a></h6>
+		<h6><a href="contact.html">Contact Us</a></h6>
+		<h6><a href="#">Sitemap</a></h6>
+		<h6><a href="#">My Account</a></h6>
+		</div>
+	   </div>
+	   <div class="col-sm-3">
+		<div class="footer_1i clearfix">
+		<h4>Products</h4>
+		<h6><a href="#">Delivery</a></h6>
+		<h6><a href="#">Secure Payment</a></h6>
+		<h6><a href="#">Prices Drop</a></h6>
+		<h6><a href="list.html">New Products</a></h6>
+		<h6><a href="#">Best Sales</a></h6>
+		<h6><a href="#">Stores</a></h6>
+		</div>
+	   </div>
+	   <div class="col-sm-3">
+		<div class="footer_1i clearfix">
+		<h4>Contact Us</h4>
+		<h6><a href="#"><i class="fa fa-map-marker col_1"></i>SD-1, Block A North Nazimabad Town,
+		   Karachi, 74700</a></h6>
+		<h6><a href="#"><i class="fa fa-phone col_1"></i> 03257662005</a></h6>
+		<h6><a href="#"><i class="fa fa-fax col_1"></i> 0123456789</a></h6>
+		<h6><a href="#"><i class="fa fa-envelope col_1"></i> support@unseen.pk</a></h6>
+		</div>
+	   </div>
+	  </div>
+	 </div>
+	</div>
+   </section>
+   
+   <section id="footer_bottom">
+	<div class="container">
+	 <div class="row">
+	  <div class="footer_b clearfix">
+		<div class="col-sm-5 space_left">
+		 <div class="footer_br clearfix">
+		 <ul class="mgt">
+		  <li>
+		   <a href="#">Our Policy</a>
+		   <a href="#">Shipping</a>
+		   <a href="#">Terms &amp; Conditions</a>
+		   <a class="border_none" href="#">Refund Policy</a>
+		  </li>
+		 </ul>
+		</div>
+		</div>
+		<div class="col-sm-7 space_left">
+		 <div class="footer_bl  text-right clearfix">
+		  <p class="mgt">© 2024 Unseen Universe. All Rights Reserved</p>
+		 </div>
+		</div>
+	  </div>
+	 </div>
+	</div>
+   </section>
+	
+<script type="text/javascript">
+$(document).ready(function(){
+	/*****Fixed Menu******/
+	var secondaryNav = $('.cd-secondary-nav'),
+	   secondaryNavTopPosition = secondaryNav.offset().top;
+	   navbar_height = document.querySelector('.navbar').offsetHeight;
+	   
+		$(window).on('scroll', function(){
+		    if($(window).scrollTop() > secondaryNavTopPosition + navbar_height ) {
+				secondaryNav.addClass('is-fixed');	
+				document.body.style.paddingTop = navbar_height + 'px';
+				
+			} else {
+				secondaryNav.removeClass('is-fixed');
+				document.body.style.paddingTop = '0'
+			}
+		});	
+		
+});
+</script>
+
+</body>
+ 
+</html>
